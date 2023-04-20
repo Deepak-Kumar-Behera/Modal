@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+
+        <div class="card-wrapper">
+          <div class="image">
+            <img src="./assets/profile-image.webp" alt="" />
+          </div>
+          <div class="heading">
+            <h2>Love Babbar</h2>
+          </div>
+          <div class="text">
+            <p>Founder, Code Help</p>
+          </div>
+          <div class="btn-group">
+            <button onclick="openModal()" class="btn share-profile">
+                <i class="fa-solid fa-share"></i>
+              Share My Profile
+            </button>
+            <button class="btn">
+                Follow Me
+            </button>
+          </div>
+        </div>
+
+        <!--Modal-->
+        <div class="modal">
+            <div class="modal-header">
+                <h2>
+                    Share My Profile
+                </h2>
+                <div onclick="closeModal()" class="close">
+                    <i class="fa-solid fa-xmark close"></i>
+                </div> 
+            </div>
+            <div class="modal-body">
+                <h3>
+                    Share this via
+                </h3>
+                <div class="share-links">
+                    <a href="#" class="icon" id="facebook">
+                      <i class="fa-brands fa-facebook-f"></i>
+                      </a>
+                      <a href="#" class="icon" id="twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                      </a>
+                      <a href="#" class="icon" id="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                      </a>
+                      <a href="#" class="icon" id="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                      </a>
+                      <a href="#" class="icon" id="telegram">
+                        <i class="fa-brands fa-telegram"></i>
+                      </a>
+                </div>
+            </div>
+        </div>
+        
+
+        <!--Overlay-->
+        <div onclick="closeModal()" class="overlay"></div>
+
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/58a810656e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>

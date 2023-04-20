@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    /* background-color: #000; */
+    background: radial-gradient(circle at -8.9% 51.2%, rgb(255, 124, 0) 0%, rgb(255, 124, 0) 15.9%, rgb(255, 163, 77) 15.9%, rgb(255, 163, 77) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
+
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle1 {
+    height: 12em;
+    width: 12em;
+    box-shadow: 0 0 50px #d84869;
+    background: linear-gradient(-25deg, #d84869, #f46641);
+    border-radius: 50%;
+    position: absolute;
+    left: 28%;
+    top: 2%;
+    transform: translate(-50% -50%);
+    animation: circle1animate 10s linear  infinite;
+}
+
+@keyframes circle1animate {
+    50%{
+        left: 30%;
+        top: 4%;
+        scale: 1.1;
+    }
+}
+
+.circle2 {
+    height: 15em;
+    width: 15em;
+    box-shadow: 0 0 50px #5648d8;
+    background: linear-gradient(-25deg, #5648d8, #8641f4);
+    border-radius: 50%;
+    position: absolute;
+    right: 25%;
+    bottom: 3%;
+    transform: translate(-50% -50%);
+    animation: circle2animate 10s linear infinite;
+}
+
+@keyframes circle2animate { 
+    50% {
+        right: 30%;
+        bottom: 8%;
+        scale: 1.1;
+    }
+}
+
+.card-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: #ffffff1a;
+    backdrop-filter: blur(15px);
+    height: 500px;
+    /* width: 400px; */
+    padding: 2rem 2.5rem;
+    border-radius: 3%;
+    border: 2px solid #ffffff30;
+}
+
+.image img {
+    height: 10rem;
+    width: 10rem;
+    border: 2px solid #ffffff30;
+    border-radius: 50%;
+}
+
+.heading h2 {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.text p {
+    font-size: 1.2rem;
+    color: #ffffff85;
+    text-align: center;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.5rem;
+    background-color: transparent;
+    color: #ffffffb9;
+    border: 2px solid #ffffffb9;
+    width: 150px;
+    border-radius: 3%;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.btn:hover {
+    background: #ffffffb9;
+    color: #131313;
+}
+
+.share-profile {
+    display: flex;
+    padding: 0.5rem 0.8rem;
+    gap: 10px;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    color: #fff;
+    width: 550px;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    background: #00000088;
+    backdrop-filter: blur(10px);
+    border: 2px solid #ffffff59;
+    transition: all 0.5s;
+    scale: 0;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+}
+
+.modal-header h2 {
+    font-size: 2rem;
+    padding: 12px 0;
+}
+
+.close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close i {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.modal-body h3 {
+    margin: 1.5rem auto;
+    font-size: 1.2rem;
+}
+
+.share-links {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.share-links a {
+    border-radius: 50%;
+    border: 1px solid blue;
+    display: flex;
+    height: 65px;
+    width: 65px;
+    justify-content: center;
+    align-items: center;
+}
+
+.share-links a i {
+    font-size: 27px;
+    /* color: pink; */
+}
+
+#facebook {
+    color: #1771e6;
+    border: 1px solid #1771e6;
+  }
+  #facebook:hover {
+    background-color: #1771e6;
+    color: #fff;
+  }
+  
+  #twitter {
+    color: #1c99e6;
+    border: 1px solid #1c99e6;
+  }
+  #twitter:hover {
+    background-color: #1c99e6;
+    color: #fff;
+  }
+  
+  #instagram {
+    color: #cb2770;
+    border: 1px solid #cb2770;
+  }
+  #instagram:hover {
+    background-color: #cb2770;
+    color: #fff;
+  }
+  
+  #whatsapp {
+    color: #2fe664;
+    border: 1px solid #2fe664;
+  }
+  #whatsapp:hover {
+    background-color: #2fe664;
+    color: #fff;
+  }
+  
+  #telegram {
+    color: #0081c2;
+    border: 1px solid #0081c2;
+  }
+  #telegram:hover {
+    background-color: #0081c2;
+    color: #fff;
+  }
+
+  .active {
+    scale: 1;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #5f5f5f83;
+    pointer-events: none;
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+  }
+
+  .overlay-active {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  @media (max-width: 600px) {
+
+    .wrapper {
+        background: linear-gradient(to top, #dbdcd7 0%, #dddcd7 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);
+    }
+    
+    .circle1 {
+        display: none;
+    }
+
+    .circle2 {
+        height: 12em;
+        width: 12em;
+        right: 3%;
+        bottom: 62%;
+        /* background: pink; */
+    }
+
+    @keyframes circle2animate {
+        50%{
+            right: 62%;
+            bottom: 20%;
+            scale: 1.1;
+        }
+    }
+
+    .card-wrapper {
+        width: 70vw;
+    }
+
+    .modal {
+        width: 80vw;
+    }
+
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.5rem;
+        padding: 12px 0;
+    }
+
+    .close i {
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    
+    .modal-body h3 {
+        margin: 1.5rem auto;
+        font-size: 1.2rem;
+    }
+
+    .share-links a {
+        border-radius: 50%;
+        border: 1px solid blue;
+        display: flex;
+        height: 50px;
+        width: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .share-links a i {
+        font-size: 22px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .image img {
+        height: 8rem;
+        width: 8rem;
+        border: 2px solid #ffffff30;
+        border-radius: 50%;
+    }
+    
+    .heading h2 {
+        font-size: 1.6em;
+    }
+    
+    .text p {
+        font-size: 1rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.25rem;
+        padding: 12px 0;
+    }
+
+    .modal-body h3 {
+        font-size: 1.1rem;
+    }
+
+    .share-links a {
+        height: 40px;
+        width: 40px;
+    }
+    
+    .share-links a i {
+        font-size: 20px;
+    }
+  }
+
+
+  
